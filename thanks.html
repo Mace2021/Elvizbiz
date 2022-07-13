@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" src="main.js"></script>
+  <style>
+        @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+body {
+  font-family: "Poppins";
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 10px 10px;
+}
+
+.navigation {
+  height: 70px;
+  background: #fff;
+}
+
+.img-fluid {
+  position: relative;
+  padding-left: 5px;
+  padding-top: 7%;
+  float: left;
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: capitalize;
+  font-size: 2.8em;
+}
+.brand a,
+.brand a:visited {
+  color: #0c0c0c;
+  text-decoration: none;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav {
+  float: right;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #fff;
+  color: #0c0c0c;
+  text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  background: #f8b500;
+  color: #0c0c0c;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff;
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 798px) {
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #0c0c0c;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+
+
+footer {
+  padding: 3px;
+  display: block;
+  margin: 5px;
+  justify-content: center;
+  justify-content: space-between;
+  height: 28vh;
+  width: 100%;
+  border: solid blueviolet;
+  -moz-columns: 3;
+       columns: 3;
+}
+
+.footer-social-link {
+  display: inline-block;
+  margin: auto;
+  padding: 0;
+}
+
+.img-fluid {
+  width: 10vw;
+  height: 5vh;
+}
+
+li {
+  list-style: none;
+  display: block;
+  margin: 2px;
+}
+
+.contact-icon {
+  display: block;
+  padding: 0px;
+}
+
+.col-md-6 {
+  display: block;
+  flex-wrap: nowrap;
+  margin: 20px;
+}/*# sourceMappingURL=main.css.map */
+
+
+
+
+
+
+footer {
+  padding: 3px;
+  display: block;
+  margin: 5px;
+  justify-content: center;
+  justify-content: space-between;
+  height: 30vh;
+  width: 100%;
+  border: solid blueviolet;
+  -moz-columns: 3;
+       columns: 3;
+}
+
+.footer-social-link {
+  display: inline-block;
+  margin: auto;
+  padding: 0;
+}
+
+.img-fluid {
+  width: 10vw;
+  height: 5vh;
+}
+
+li {
+  list-style: none;
+  display: block;
+  margin: 2px;
+}
+
+.contact-icon {
+  display: block;
+  padding: 0px;
+}
+
+.col-md-6 {
+  display: block;
+  flex-wrap: nowrap;
+  margin: 20px;
+}/*# sourceMappingURL=main.css.map */
+
+.thank-you-note {
+  background:url(images/thanks.jpg) no-repeat center center fixed; 
+  background-repeat: no-repeat;
+  padding-top: 380px;
+ width: 100%;   
+ height: 25vh;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-size:4.5em;
+  color:rgb(222, 15, 25);
+  padding-left: 26%;
+  box-sizing: content-box;
+  flex-grow: 2;
+ 
+}
+div>p{
+  position:relative;
+  height:25vh;
+  text-align: center;
+  border: solid purple;
+  font-size: 3em;
+  width:100%;
+  background-color:indigo;
+  padding-top: 35px;
+  color:aliceblue;
+}
+
+    </style>
+</head>
+<body>
+    
+    <section class="navigation">
+        <div class="nav-container">
+          <div class="brand">
+            <img src="./images/logo.jpg" class="img-fluid" alt="">
+            <a href="index.html">ElvizBiz</a>
+          </div>
+          <nav>
+        <div class="nav-mobile">
+          <a id="nav-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Services</a></li>
+          <li>
+            <a href="#">Projects</a>
+            <ul class="nav-dropdown">
+              <li><a href="projects.html">Web Design</a></li>
+              <li><a href="projects.html">Web Development</a></li>
+              <li><a href="projects.html">Graphic Design</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html">About Us</a></li>
+          <li><a href="https://formsubmit.co/el/wapifo">Contact</a></li>
+        </ul>
+      </nav>
+          </div>
+      </section>
+
+
+<div class="thank-you-note">
+
+</div>
+<div class="note">
+  <P>Tell your friends about us.</P>
+  </div>
+
+
+
+
+
+
+
+     
+      <footer id="dk-footer" class="dk-footer">
+              
+                             
+                              <div class="footer-social-link">
+                                  <h3>Follow us</h3>
+                                  <ul>
+                                      
+                                 <li>
+                                  <a href="https://www.facebook.com/elviz.biz/" target="_blank">
+                                      <i class="fa fa-facebook"></i>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://twitter.com/elvizbiz" target="_blank">
+                                      <i class="fa fa-twitter"></i>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://formsubmit.co/el/wapifo" target="_blank">
+                                      <i class="fa fa-google-plus"></i>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://www.linkedin.com/in/grievanzes/" target="_blank">
+                                      <i class="fa fa-linkedin"></i>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://www.instagram.com/elvizbiz2021/">
+                                      <i class="fa fa-instagram"></i>
+                                  </a>
+                              </li>
+                                  </ul>
+                              </div>
+                              <!-- End Social link -->
+                    
+                      
+                                      <div class="contact-icon">
+                                          <h3>Washington, USA</h3>
+                                          <h4>Yakima, WA 98901</h4>
+                                            
+                                      
+                                     </div>
+                               
+                                      <!-- End contact Icon -->
+                               
+              <!-- End Contact Container -->
+      
+      
+             
+                   
+                            
+                       
+                          <!-- End Col -->
+                          <div class="col-md-6">
+                             <span>Copyright © 2022, All Right Reserved ElvizBiz</span><br><br><br>
+                                  <ul>
+                                      <li>
+                                          <a href="index.html">Home</a>
+                                      </li>
+                                      <li>
+                                          <a href="privacy.html">Terms</a>
+                                      </li>
+                                      <li>
+                                          <a href="privacy.html">Privacy Policy</a>
+                                      </li>
+                                      <li>
+                                          <a href="https://formsubmit.co/el/wapifo">"Contact</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                     
+                  <!-- End Copyright Container -->
+           
+              <!-- End Copyright -->
+              <!-- Back to top -->
+         
+              <!-- End Back to top -->
+      </footer>
+      
+      <script src="main.js">window.onload=screen</script>
+</body>
+</html>
