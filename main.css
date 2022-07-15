@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  background-image: url("./images/Backgroundpatten1.jpg");
+  background-image: url("Backgroundpatten1.jpg");
   font: 1em sans-serif;
 }
 
@@ -175,7 +175,7 @@ nav ul li ul li a {
 }
 
 .welcome {
-  background-image: url(./images/background.jpg);
+  background-image: url(background.jpg);
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
