@@ -34,7 +34,8 @@ window.onload=Screen;
               response => response.json()
           ).then((html) => {
             // you can put any JS code here
-            window.open('thanks.html', 'target="_blank"');
+           
+            location = window.open('thanks.html', '_blank');
 
           });
         });
