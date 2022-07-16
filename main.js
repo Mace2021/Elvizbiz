@@ -35,7 +35,7 @@ window.onload=Screen;
           ).then((html) => {
             // you can put any JS code here
            
-            location = window.open('thanks.html', '_blank');
+            location = window.open('Mace2021/Elvizbiz/thanks.html', '_blank');
 
           });
         });
@@ -43,7 +43,7 @@ window.onload=Screen;
  
         function redirect(){
 
-          location =   window.open('thanks.html', '_blank' );
+          location =   window.open('Mace2021/Elvizbiz/thanks.html', '_blank' );
          
          }
  
