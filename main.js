@@ -41,6 +41,10 @@ window.onload=Screen;
         });
       
  
+        function redirect(){
 
+          location =   window.open('thanks.html', '_blank' );
+         
+         }
  
  
