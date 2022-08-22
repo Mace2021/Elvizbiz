@@ -43,8 +43,10 @@ window.onload=Screen;
  
         function redirect(){
 
-          location =   window.open('thanks.html', '_blank' );
+          location = window.open('thanks.html', '_blank' );
          
          }
- 
+         document.getElementById("submit").onclick = function () {
+          location.href = "thanks.html";
+      };
  
