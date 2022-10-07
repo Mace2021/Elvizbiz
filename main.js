@@ -35,7 +35,7 @@ window.onload=Screen;
           ).then((html) => {
             // you can put any JS code here
            
-            location = window.open('thanks.html', '_blank');
+            location = window.open('./thanks.html', '_blank');
 
           });
         });
@@ -43,10 +43,10 @@ window.onload=Screen;
  
         function redirect(){
 
-          location = window.open('thanks.html', '_blank' );
+          location = window.open('./thanks.html', '_blank' );
          
          }
          document.getElementById("submit").onclick = function () {
-          location.href = "thanks.html";
+          location.href = "./thanks.html";
       };
  
