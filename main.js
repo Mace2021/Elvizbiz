@@ -44,9 +44,9 @@ window.onload=Screen;
          
          }
         
-        
+         const d = new Date();   
       
 function time(){
-  const d = new Date();
+  
 document.getElementById("time").innerHTML = d;
 }
