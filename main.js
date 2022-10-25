@@ -40,12 +40,10 @@ window.onload=Screen;
           });
         });
       
- 
-        function redirect(){
-
-          location = window.open('thanks.html', '_blank' );
+        function myFunction() {
+          location.replace('thanks.html','_blank' );
          
          }
          document.getElementById("submit").onclick = function () {
-          location.href = "thanks.html";
+          location.replace("thanks.html");
       };
