@@ -34,17 +34,16 @@ window.onload=Screen;
               response => response.json()
           ).then((html) => {
             // you can put any JS code here
-           
-            location = window.open('thanks.html');
+            window.location.replace('thanks.html');
 
           });
         });
       
         function myFunction() {
-          location.replace('thanks.html');
+          window.location.replace(('thanks.html');
          
          }
-         cdocument.getElementById("submit");
+        
         
       
 function time(){
