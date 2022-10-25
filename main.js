@@ -48,6 +48,6 @@ window.onload=Screen;
         
       
 function Date(){
-  const d = new Date("2022-03-25");
-document.getElementById("submit").innerHTML = d;
+  const d = new Date();
+document.getElementById("time").innerHTML = d;
 }
