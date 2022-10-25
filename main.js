@@ -49,4 +49,5 @@ window.onload=Screen;
          document.getElementById("submit").onclick = function () {
           location.href = "./thanks.html";
       };
- 
+ Array.form(document.querySelectorAll('#contact input')).reduce((acc, input)=>({...acc, [input.id]:input.vale}),{});
+ {name:"", email:"",textarea:""}
