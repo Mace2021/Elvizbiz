@@ -35,19 +35,19 @@ window.onload=Screen;
           ).then((html) => {
             // you can put any JS code here
            
-            location = window.open('thanks.html', '_blank');
+            location = window.open('thanks.html');
 
           });
         });
       
         function myFunction() {
-          location.replace('thanks.html','_blank' );
+          location.replace('thanks.html');
          
          }
          cdocument.getElementById("submit");
         
       
-function Date(){
+function time(){
   const d = new Date();
 document.getElementById("time").innerHTML = d;
 }
