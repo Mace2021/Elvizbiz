@@ -44,10 +44,9 @@ window.onload=Screen;
           location.replace('thanks.html','_blank' );
          
          }
-         document.getElementById("submit").onclick = function () {
-          location.replace("thanks.html");
+         cdocument.getElementById("submit");
         
-      };
+      
 function Date(){
   const d = new Date("2022-03-25");
 document.getElementById("submit").innerHTML = d;
