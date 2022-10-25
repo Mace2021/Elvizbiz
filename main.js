@@ -34,7 +34,7 @@ window.onload=Screen;
               response => response.json()
           ).then((html) => {
             // you can put any JS code here
-            window.location.replace('thanks.html');
+            window.location.replace('/thanks.html');
 
           });
         });
@@ -43,5 +43,5 @@ window.onload=Screen;
         
          document.getElementById("submit").addEventListener("click", myFunction);  
          function myFunction() {  
-           window.location.href="./thanks.html";  
+           window.location.href="/thanks.html";  
          }
