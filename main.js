@@ -39,14 +39,9 @@ window.onload=Screen;
           });
         });
       
-        function myFunction() {
-          window.location.replace(('thanks.html');
-         
-         }
         
-         const d = new Date();   
-      
-function time(){
-  
-document.getElementById("time").innerHTML = d;
-}
+        
+         document.getElementById("submit").addEventListener("click", myFunction);  
+         function myFunction() {  
+           window.location.href="thanks.html";  
+         }
