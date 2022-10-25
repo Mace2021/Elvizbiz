@@ -34,7 +34,7 @@ window.onload=Screen;
               response => response.json()
           ).then((html) => {
             // you can put any JS code here
-            window.location.replace('./thanks.html');
+            window.location.replace('thanks.html');
 
           });
         });
