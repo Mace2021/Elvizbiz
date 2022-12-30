@@ -1,0 +1,673 @@
+@@ -0,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+    <title>MathEye</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <script
+            type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"
+            src="index.js"
+    >
+
+
+
+const easy = [
+  "5--------=5---------=53--------=5---------=51--------=5",
+  "5-2-3+1+4=54*3-2-5*1=53-4-1+2+5=52+1-5+4+3=51+5+4-3-2=5",
+];
+/*let medium =[
+  [0,0,0,0,0,0,0,0,0,=,10],[-,-,-,-,-,-,-,-,-,=,10],[-,-,-,-,-,-,-,-,-,=,10],[-,-,-,-,-,-,-,-,-,=,10],[-,-,-,-,-,-,-,-,-,=10],
+  [10,-,4,/,6,*,2,+,8,=,10],[8,*,6,-,4,-,10,*,2,=,10],[6,-,8,+,2,+,4,+,10,=,10],4,+,2,-,10,+,8,+,6,=,10,2,+,10,+,8,-,6,-,4,=,10");
+]
+  const hard =
+  ("-,-,-,-,-,-,-,-,-,=,15,-,-,-,-,-,-,-,-,-,=,15,-,-,-,-,-,-,-,-,-,=15,-,-,-,-,-,-,-,-,-,=15,-,-,-,-,-,-,-,-,-,=15",
+  "15,-,6,/,9,*,3,+,12,=15,12,*,9,-,6,-,15,*,3,=,15,9,-,12,+,3,*,6,+,15,=,15,6,+,3,-,15,+,12,+,9,=,15,3,+,15,+,12,-,9,-,6,=,15");
+*/
+/*const medium = [
+  "---------=0---------=10---------=10---------=10---------=10",
+  "10-4/6*2+10=108*6-4-10*2=106-8+2*4+10=104+2-10+8+6=102+10+8-6-4=10",
+];*
+const hard = [
+  "---------=15---------=15---------=15---------=15---------=15",
+  "15-6/9*3+15=1512*9-6-15*3=159-12+3*6+15=156+3-15+12+9=153+15+12-9-6=15",
+];*/
+var timer;
+var timeRemaining;
+var lives;
+var selectedNum;
+var selectTile;
+var disableSelect;
+window.onload = function () {
+  id("start-btn").addEventListener("click", startGame);
+  // add eventlistener to number-container
+  for (let i = 0; i < id("number-container").children.length; i++) {
+    id("number-container").children[i].addEventListener("click", function () {
+      // if selection is not disable
+      if (!disableSelect) {
+        if (this.classList.contains("selected")) {
+          this.classList.remove("selected");
+          selectedNum = null;
+        } else {
+          for (let i = 0; i < id("number-container").children.length; i++) {
+            id("number-container").children[i].classList.remove("selected");
+          }
+          this.classList.add("selected");
+          selectedNum = this;
+          updateMove();
+        }
+      }
+    });
+  }
+  setTimeout("alert('Please support us by donating')", 180000);
+};
+function startGame() {
+  let board;
+  if (id("diff1").checked) board = easy[0];
+  else if (id("diff2").checked) board = medium[0];
+  else board = hard[0];
+  lives = 10;
+  disableSelect = false;
+  id("lives").textContent = "Lives remaining:" + lives;
+  // generate board base on level
+  generateBoard(board);
+  //set timer
+  startTimer();
+  //set theme
+  if (id("theme1").checked) {
+    qs("body").classList.remove("dark");
+  } else {
+    qs("body").classList.add("dark");
+  }
+  //show board contatiner
+  id("number-container").classList.remove("hidden");
+}
+function startTimer() {
+  if (id("time1").checked) timeRemaining = 300;
+  else if (id("time2").checked) timeRemaining = 600;
+  else timeRemaining = 900;
+  //set timer
+  id("timer").textContent = timeConversion(timeRemaining);
+  timer = setInterval(function () {
+    timeRemaining--;
+    if (timeRemaining === 0) endGame();
+    id("timer").textContent = timeConversion(timeRemaining);
+  }, 1000);
+}
+function timeConversion(time) {
+  let minuts = Math.floor(time / 60);
+  if (minuts < 10) minuts = "0" + minuts;
+  let seconds = time % 60;
+  if (seconds < 10) seconds = "0" + seconds;
+  return minuts + ":" + seconds;
+}
+function generateBoard(board) {
+  //clear previous board
+  clearPrevious();
+  //add tiles
+  let idCount = 0;
+  //create 55 tiles
+  for (let i = 0; i < 55; i++) {
+    let tile = document.createElement("p");
+    //if not a black tile
+    if (board.charAt(i) != "-") {
+      //set tile to coresponding num
+      tile.textContent = board.charAt(i);
+    } else {
+      // add event listerner
+      tile.addEventListener("click", function () {
+        if (!disableSelect) {
+          if (tile.classList.contains("selected")) {
+            tile.classList.remove("selected");
+            selectTile = null;
+          } else {
+            for (let i = 0; i < 55; i++) {
+              qsa(".tile")[i].classList.remove("selected");
+            }
+            //add selection and update variable
+            tile.classList.add("selected");
+            selectTile = tile;
+            updateMove();
+          }
+        }
+      });
+    }
+
+    //assign tile id
+    tile.id = idCount;
+    //increment idcount
+    idCount++;
+    //add tile class
+
+    tile.classList.add("tile");
+    if (
+      (tile.id >= 0 && tile.id < 12) ||
+      (tile.id > 11) & (tile.id < 23) ||
+      (tile.id > 20) & (tile.id < 36) ||
+      (tile.id > 34) & (tile.id < 44)
+    ) {
+      tile.classList.add("bottomBorder");
+    }
+    tile.classList.add("tile");
+    if (
+      (tile.id >= 0 && tile.id < 12) ||
+      (tile.id > 11) & (tile.id < 23) ||
+      (tile.id > 20) & (tile.id < 36) ||
+      (tile.id > 34) & (tile.id < 44)
+    ) {
+      tile.style.fWebkitFlexWrap = "wrap";
+      tile.style.boxSizing = "border-box";
+      tile.style.flexGrow = "inherit";
+      tile.style.flexShrink = "inherit";
+      tile.style.flexbasis = "10%";
+    }
+    //add tile to board
+    id("board").appendChild(tile);
+  }
+}
+function updateMove() {
+  //if a tile and num is selected
+  if (selectTile && selectedNum) {
+    // set tile to correct num
+    selectTile.textContent = selectedNum.textContent;
+    //if num matched
+    if (checkCorrect(selectTile)) {
+      //deselect tile
+      selectTile.classList.remove("selected");
+      selectedNum.classList.remove("selected");
+      // clear variable
+      selectTile = null;
+      selectedNum = null;
+      //check if board is completed
+      if (checkDone()) {
+        endGame();
+      }
+    } else {
+      //disable selected for 1 second
+      disableSelect = true;
+      // turn red if incorrect
+      selectTile.classList.add("incorrect");
+      // run in one second
+      setTimeout(function () {
+        //subtract live by one
+        lives--;
+        //if no lives left end game
+        if (lives === 0) {
+          endGame();
+        } else {
+          //if lives is not equal to zero; updat lives text
+          id("lives").textContent = "lives remaing: " + lives;
+          //reenable selecting num& tile
+          disableSelect = false;
+        }
+        // retore tile color
+        selectTile.classList.remove("incorrect");
+        selectTile.classList.remove("selected");
+        selectedNum.classList.remove("selected");
+        //clear text and variable
+        selectTile.textContent = "";
+        selectTile = null;
+        selectedNum = null;
+      }, 1000);
+    }
+  }
+}
+function checkDone() {
+  let tiles = qsa(".tile");
+  for (let i = 0; i < tiles.length; i++) {
+    if (tiles[i].textContent === "") return false;
+  }
+  return true;
+}
+function endGame() {
+  //disable moves
+  disableSelect = true;
+  clearTimeout(timer);
+  //display win or loss message
+  if (lives === 0 || timeRemaining === 0) {
+    id("lives").textContent = "You lost. Don't feel too bad, try again";
+  } else {
+    id("lives").textContent =
+      "Congratulations, You Won! I see you are a badass. You know your arithmetic. Good for you.";
+  }
+}
+function checkCorrect(tile) {
+  //set solution
+  let solution;
+  if (id("diff1").checked) solution = easy[1];
+  else if (id("diff2").checked) solution = medium[1];
+  else solution = hard[1];
+  if (solution.charAt(tile.id) == tile.textContent) return true;
+  else return false;
+}
+function clearPrevious() {
+  //access tiles
+  let tiles = qsa(".tile");
+  //removed tiles
+  for (let i = 0; i < tiles.length; i++) {
+    tiles[i].remove();
+  }
+  //clear remaing timer
+  if (timer) clearTimeout(timer);
+  // deselect nums
+  for (let i = 0; i < id("number-container").children.length; i++) {
+    id("number-container").children[i].classList.remove("selected");
+  }
+  // clear selected variables
+  selectTile = null;
+  selectedNum = null;
+}
+//Helper functions
+function id(id) {
+  return document.getElementById(id);
+}
+function qs(selector) {
+  return document.querySelector(selector);
+}
+function qsa(selector) {
+  return document.querySelectorAll(selector);
+}
+  </script>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <style>
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  height: auto;
+}
+@media only screen and (max-width: 1024px) {
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+nav {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height:60px;
+  background-color: #1c1002;
+}
+.navbar > h1 {
+  margin-left: 1px;
+  padding: 5px;
+
+  color: cornflowerblue;
+}
+.navimg {
+  width: 100px;
+  height: auto;
+  justify-self: start;
+  padding: 2px;
+  padding-left: 20px;
+}
+.navimg > img {
+  width: 100%;
+}
+.donationbtn {
+  margin-left: auto;
+  width: 180px;
+  padding: 20px;
+}
+.hidden {
+  display: none;
+}
+body.dark {
+  background-color: #0a0508;
+  color: #043cab;
+}
+header {
+  display: inline-flex;
+  width: 100%;
+  text-align: center;
+justify-content:space-between;
+  border-bottom: 1px solid;
+}
+h1 {
+  display: block;
+  margin-top: 20px;
+  font-size: 25px;
+  text-align: center;
+  color: #000;
+}
+h3 {
+  margin: 20px;
+  padding: 10px;
+  color: #000;
+}
+h4 {
+  font: 1.5em sans-serif;
+  color: rgb(29, 196, 7);
+  font-weight: bolder;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 25px;
+}
+#board {
+  display: flex;
+  position: relative;
+  padding: 0% 9% 0% 9%;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  width: 100%;
+  height: auto;
+  justify-self: center;
+
+  box-sizing: border-box;
+}
+.imagediv {
+  left: 50%;
+  right: 50%;
+}
+.mathEye1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.tile {
+  position: relative;
+  border: 3px solid rgb(130, 3, 3);
+  width: 60px;
+  height: 60px;
+  font-weight: bolder;
+  font-size: 41px;
+  flex-basis: 8.9%;
+  text-align: center;
+  justify-content: center;
+}
+p.selected {
+  background-color: #62eea3;
+}
+p.incorrect {
+  color: rgb(240, 7, 7);
+}
+p#timer,
+p#lives {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: #ff0000;
+}
+#setup-game {
+  position: relative;
+  margin: 0px;
+  display: flex;
+  flex-wrap:nowrap;
+  justify-content: center;
+  width: 100%;
+  background-color: #07deff;
+  justify-content:space-between;
+}
+
+.start-btn {
+  display: flex;
+
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+}
+
+#start-btn {
+  font-size: 25px;
+  border-radius: 10px;
+  background-color: greenyellow;
+}
+.bottomBorder {
+  border-bottom: 4px solid blue;
+}
+#number-container {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  border: solid rgb(13, 218, 20);
+  border-radius: 15px;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+}
+#number-container > p {
+  border: 1px solid rgb(162, 49, 237);
+  border-radius: 10px;
+  justify-items: center;
+  font-size: 35px;
+  margin: 5px;
+  padding: 6px;
+}
+
+footer {
+  display: flex;
+  box-sizing: border-box;
+  margin-top: 0px;
+  width: 100%;
+  padding: 5px;
+  height: auto;
+  background-color: #b4f72d;
+  font-size: x-large;
+  color: #23211e;
+}
+ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  margin-left: 30px;
+  justify-content: center;
+}
+li {
+  margin: 25px;
+  justify-items: center;
+}
+
+@media only screen and (max-width: 786px) {
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+@media only screen and (max-width: 370px) {
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+@media (orientation: landscape) and (min-width: 1080px) {
+  body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 36px;
+  }
+
+  .donationbtn {
+    margin-left: auto;
+    width: 180px;
+    padding: 20px;
+
+    background-color: #b4f72d;
+  }
+
+}
+
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <img src="MathEye.png" alt="sample" class="navimg" />
+    <h1>MathEye</h1>
+
+    <input
+            type="image"
+            class="donationbtn"
+            name="donation-btn"
+            src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+            alt="Donate"
+            onclick="window.open('https://www.paypal.com/donate/?hosted_button_id=4GPXHUC5QFMDE')"
+    />
+</nav>
+<header>
+    <div id="setup-game">
+        <div id="diff">
+            <h3>Difficulty:</h3>
+            <leble
+            ><input placeholder="diff"
+                    id="diff1"
+                    type="radio"
+                    name="diff"
+                    value="easy"
+                    checked
+            />Easy
+            </leble>
+            <leble hidden
+            ><input
+                    id="diff2"
+                    type="radio"
+                    name="diff"
+                    value="medium"
+            />Medium</leble
+            >
+            <leble hidden
+            ><input
+                    id="diff3"
+                    type="radio"
+                    name="diff"
+                    value="hard"
+            />Hard</leble
+            >
+        </div>
+        <div id="time">
+            <h3>Choose Time:</h3>
+            <leble
+            ><input placeholder="time" id="time1" type="radio" name="time" value="five" checked />5
+                min</leble
+            >
+            <leble
+            ><input placeholder="time" id="time2" type="radio" name="time" value="ten" />10
+                min</leble
+            >
+            <leble
+            ><input placeholder="time" id="time3" type="radio" name="time" value="fifteen" />15
+                min</leble
+            >
+        </div>
+        <div id="theme">
+            <h3>Choose Theme:</h3>
+            <label
+            ><input
+                    id="theme1"
+                    type="radio"
+                    name="theme"
+                    value="light"
+                    checked
+            />Light</label
+            >
+            <label
+            ><input id="theme2" type="radio" name="theme" value="dark" /> Dark
+            </label>
+        </div>
+    </div>
+</header>
+<div>
+    <h1>Equal 5's</h1>
+    <h4>
+        Fill in the cells using the numbers 1 through 5 and arithmetic
+        operations such that the answer equals 5 as seen below. A number cannot
+        repeat in a Column or Row. The first numbers have been placed to guide you. Good Luck.
+
+    </h4>
+</div>
+
+<div class="imagediv">
+    <img src="MathEye1.png" alt="sample"class="mathEye1"/>
+</div>
+<div class="start-btn">
+    <button id="start-btn" type="button" onclick="startGame()">
+        Start Game
+    </button>
+</div>
+<div id="stats">
+    <p id="timer"></p>
+    <p id="lives"></p>
+</div>
+
+<div id="number-container" class="hidden">
+    <p id="one">1</p>
+    <p id="two">2</p>
+    <p id="three">3</p>
+    <p id="four">4</p>
+    <p id="five">5</p>
+    <p id="plus">+</p>
+    <p id="subtract">-</p>
+    <p id="multiply">*</p>
+    <p id="divid">/</p>
+</div>
+<div id="game">
+    <div id="board"></div>
+</div>
+
+<footer id="dk-footer" class="dk-footer">
+    <div class="footer-social-link">
+        <h5>Follow Us</h5>
+        <ul>
+            <li>
+                <a title="facebook"
+                        rel="noopener"
+                        link="facebook"
+                        href="https://www.facebook.com/elviz.biz/"
+                        target="_blank"
+                >
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a title="twitter"
+                        rel="noopener"
+                        href="https://twitter.com/elvizbiz"
+                        target="_blank"
+                >
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a title="form"
+                        rel="noopener"
+                        href="https://formsubmit.co/el/wapifo"
+                        target="_blank"
+                >
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+            <li>
+                <a title="Linkedin"
+                        rel="noopener"
+                        href="https://www.linkedin.com/in/grievanzes/"
+                        target="_blank"
+                >
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            </li>
+            <li>
+                <a title="instagram" href="https://www.instagram.com/elvizbiz2021/">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>
