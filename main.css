@@ -307,7 +307,7 @@ li {
 @media screen and (max-width: 750px) {
 #home{
   justify-content: center;
-  padding: 0, 50%, 0, 50%;
+  margin: 0, 50%, 0, 50%;
 }
   .services-container {
     display: block;
