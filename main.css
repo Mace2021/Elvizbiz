@@ -305,7 +305,9 @@ li {
 
 
 @media screen and (max-width: 750px) {
-
+.card{
+  justify-content: center;
+}
   .services-container {
     display: block;
     flex-wrap: wrap;
