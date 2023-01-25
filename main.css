@@ -314,7 +314,7 @@ li {
 @media screen and (max-width: 750px) {
 body{
   box-sizing: border-box;
-  padding-left: 20%;
+  
 }
 
   .services-container {
