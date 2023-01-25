@@ -220,6 +220,7 @@ nav ul li ul li a {
   margin-bottom: 40px;
   text-align: center;
   box-shadow: 0px 5px 25px;
+  border-radius: 5px;
   
 }
 
@@ -330,17 +331,7 @@ li {
     text-align: center;
     box-shadow: 0px 5px 25px;
   }
-  .forms {
-    position: relative;
-    width: 100%;
-    display: block;
-    flex-wrap: nowrap;
-    justify-items: center;
-    height: 55vh;
-    padding-left: 10px;
-    justify-content: space-evenly;
-    
-  }
+
   .form {
     position: relative;
     display: block;
