@@ -314,7 +314,7 @@ li {
 @media screen and (max-width: 750px) {
 .card{
   justify-content: center;
-  margin: 0, 50%, 0, 50%;
+  padding:  0, 50%, 0, 50%;
   justify-content: space-evenly;
     justify-content: center;
 }
