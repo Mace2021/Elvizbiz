@@ -200,14 +200,7 @@ nav ul li ul li a {
   justify-content: space-evenly;
 }
 
-.card-body, .card-body2, .card-body3 {
-  margin: 2px;
-  border-radius: 25px;
-  justify-content: center;
-  text-align: center;
-  background: white;
-  box-shadow: 0px 5px 25px;
-}
+
 
 /* Services container styling */
 .services-container {
