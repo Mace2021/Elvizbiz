@@ -311,7 +311,7 @@ li {
 
 
 @media screen and (max-width: 750px) {
-#home{
+.card{
   justify-content: center;
   margin: 0, 50%, 0, 50%;
 }
@@ -332,7 +332,7 @@ li {
   .forms {
     position: relative;
     width: 100%;
-    display: block;
+    display: flex;
     flex-wrap: nowrap;
     justify-items: center;
     height: 55vh;
