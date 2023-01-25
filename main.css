@@ -333,5 +333,18 @@ li {
     justify-content: space-evenly;
     justify-items: flex-start;
   }
-  
+  footer {
+    padding-top: 65px;
+    position: relative;
+    padding: 3px;
+    display: block;
+    margin: 5px;
+    justify-content: center;
+    justify-content: space-between;
+    height: 28vh;
+    width: 100%;
+    border: solid blueviolet;
+    -moz-columns: 3;
+         columns: 3;
+  }
 }
