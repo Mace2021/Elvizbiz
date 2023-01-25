@@ -315,7 +315,7 @@ li {
 
 .card{
   justify-content: center;
- 
+ width: 50%;
   justify-content: space-evenly;
     justify-content: center;
 }
@@ -323,7 +323,7 @@ li {
     display: block;
     flex-wrap: wrap;
    
-    
+    margin-left: 20%;
   }
   
  
