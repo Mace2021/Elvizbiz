@@ -326,15 +326,7 @@ li {
     margin-left: 20%;
   }
   
-  /* Service card styling */
-  .service-card {
-    width: auto; /* adjust width as needed */
-    margin-bottom: 40px;
-    text-align: center;
-    box-shadow: 0px 5px 25px;
-    margin-left: 20%;
-    
-  }
+ 
 
   .forms {
     position: relative;
@@ -348,10 +340,5 @@ li {
     
    box-sizing: content-box;
   }
-  #home{
-    justify-content: center;
-    padding: auto;
-    
-    margin-left: 20%;
-  }
+  
 }
