@@ -321,7 +321,7 @@ li {
   .services-container {
     display: block;
     flex-wrap: wrap;
-    padding: 0, 50%, 0, 50%;;
+    padding: 0, 50%, 0, 50%;
   }
   
   /* Service card styling */
@@ -332,14 +332,20 @@ li {
     box-shadow: 0px 5px 25px;
   }
 
-  .form {
+  .forms {
     position: relative;
     display: block;
+
   }
   footer {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
     
    box-sizing: content-box;
+  }
+  #home{
+    justify-content: center;
+    padding: auto;
   }
 }
