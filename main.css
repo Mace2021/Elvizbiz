@@ -320,12 +320,12 @@ body{
   .services-container {
     display: block;
     flex-wrap: wrap;
-    width: 80%;
+    width: auto;
     margin-left: 20%;
     box-sizing: border-box
   }
   .service-card{
-    width: 50%;
+    width: 60%;
 
   }
  
