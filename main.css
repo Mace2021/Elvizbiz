@@ -341,6 +341,7 @@ body{
     position: relative;
     width: auto;
    box-sizing: border-box;
+   width: auto;
   }
   .navigation {
     width: auto;
