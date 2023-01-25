@@ -312,7 +312,7 @@ li {
 
 
 @media screen and (max-width: 750px) {
- .welcome#services{
+ .welcome,#services{
   margin-left: 20%;
  }
 .card{
@@ -324,7 +324,7 @@ li {
   .services-container {
     display: block;
     flex-wrap: wrap;
-    padding: 0, 50%, 0, 50%;
+   
     margin-left: 20%;
   }
   
