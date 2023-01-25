@@ -314,7 +314,7 @@ li {
   
   /* Service card styling */
   .service-card {
-    width: calc(25% - 20px); /* adjust width as needed */
+    width: calc(50% - 20px); /* adjust width as needed */
     margin-bottom: 40px;
     text-align: center;
     box-shadow: 0px 5px 25px;
