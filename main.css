@@ -322,6 +322,7 @@ li {
     display: block;
     flex-wrap: wrap;
     padding: 0, 50%, 0, 50%;
+    margin-left: 20%;
   }
   
   /* Service card styling */
@@ -331,6 +332,7 @@ li {
     text-align: center;
     box-shadow: 0px 5px 25px;
     margin-left: 20%;
+    
   }
 
   .forms {
@@ -342,12 +344,13 @@ li {
     display: inline-block;
     flex-wrap: wrap;
     position: relative;
-    margin-left: 20%;
+    
    box-sizing: content-box;
   }
   #home{
     justify-content: center;
     padding: auto;
     padding: 0, 50%, 0, 50%;
+    margin-left: 20%;
   }
 }
