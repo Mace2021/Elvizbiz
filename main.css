@@ -323,4 +323,10 @@ li {
     text-align: center;
     box-shadow: 0px 5px 25px;
   }
+  .form{
+    display: block;
+    justify-content: center;
+    margin: 0, 50%, 0, 50%;
+  }
+  
 }
