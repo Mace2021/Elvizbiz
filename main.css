@@ -1,8 +1,8 @@
 @charset "UTF-8";
 *{
   box-sizing: content-box;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
 }
 body {
   background-image: url("Backgroundpatten1.jpg");
@@ -233,7 +233,7 @@ nav ul li ul li a {
   display: flex;
   flex-wrap: nowrap;
   justify-items: center;
-  height: 55vh;
+  height: auto;
   padding-left: 10px;
   justify-content: space-evenly;
   justify-items: flex-start;
@@ -314,12 +314,13 @@ li {
 .card{
   justify-content: center;
   margin: 0, 50%, 0, 50%;
+  justify-content: space-evenly;
+    justify-content: center;
 }
   .services-container {
     display: block;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    justify-content: center;
+    
   }
   
   /* Service card styling */
