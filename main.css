@@ -215,6 +215,7 @@ nav ul li ul li a {
   margin-bottom: 40px;
   text-align: center;
   box-shadow: 0px 5px 25px;
+  border-radius: 20px;
 }
 
 .service-card img {
@@ -331,7 +332,7 @@ li {
     height: 55vh;
     padding-left: 10px;
     justify-content: space-evenly;
-    justify-items: flex-start;
+    
   }
   footer {
     
@@ -344,7 +345,6 @@ li {
     height: auto;
     width: 100%;
     border: solid blueviolet;
-    -moz-columns: 3;
-         columns: 3;
+   box-sizing: content-box;
   }
 }
