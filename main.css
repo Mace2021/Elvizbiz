@@ -312,6 +312,9 @@ li {
 
 
 @media screen and (max-width: 750px) {
+ .welcome#services{
+  margin-left: 20%;
+ }
 .card{
   justify-content: center;
   margin: 0, 50%, 0, 50%;
@@ -338,7 +341,7 @@ li {
   .forms {
     position: relative;
     display: block;
-
+    margin-left: 20%;
   }
   footer {
     display: inline-block;
