@@ -303,7 +303,7 @@ li {
   margin: 20px;
 }/*# sourceMappingURL=main.css.map */
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 750px) {
   .services-container {
     display: block;
     flex-wrap: wrap;
