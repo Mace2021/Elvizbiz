@@ -362,7 +362,7 @@ body{
   #contact{
     width: auto;
   }
-  .form-group{
+  .form-group>input{
     width: auto;
     box-sizing: border-box;
   }
