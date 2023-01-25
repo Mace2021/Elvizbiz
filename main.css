@@ -310,6 +310,7 @@ li {
     display: block;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    justify-content: center;
   }
   
   /* Service card styling */
