@@ -324,11 +324,11 @@ body{
     width: auto;
     margin-left: 20%;
     box-sizing: border-box;
-    border: solid rgb(40, 234, 88);
+    
   }
   .service-card{
     width: 60%;
-    border: solid rgb(219, 92, 78);
+    
   }
  
 
@@ -336,7 +336,7 @@ body{
     position: relative;
     display: block;
     margin-left: 20%;
-    border: solid rgb(242, 18, 77);
+   
     box-sizing: border-box;
     width: auto;
     justify-items: center;
@@ -349,10 +349,10 @@ body{
     height: auto;
    box-sizing: border-box;
    width: auto;
-   border: solid rgb(241, 186, 7);
+   
   }
   .navigation {
     width: auto;
-    border: solid navy;
+    
   }
 }
