@@ -336,6 +336,8 @@ body{
     display: block;
     margin-left: 20%;
     border: solid rgb(242, 18, 77);
+    box-sizing: border-box;
+    width: auto;
   }
   footer {
     display: flex;
