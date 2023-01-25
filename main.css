@@ -333,7 +333,7 @@ li {
   .forms {
     position: relative;
     width: 100%;
-    display: flex;
+    display: block;
     flex-wrap: nowrap;
     justify-items: center;
     height: 55vh;
@@ -343,9 +343,10 @@ li {
   }
   .form {
     position: relative;
+    display: block;
   }
   footer {
-    
+    display: block;
     position: relative;
     
    box-sizing: content-box;
