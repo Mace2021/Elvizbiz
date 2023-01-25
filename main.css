@@ -312,14 +312,16 @@ li {
 
 
 @media screen and (max-width: 750px) {
-
+body{
+  box-sizing: border-box;
+}
 
   .services-container {
     display: block;
     flex-wrap: wrap;
     width: 80%;
     margin-left: 20%;
-    box-sizing: content-box;
+    box-sizing: border-box
   }
   .service-card{
     width: 50%;
@@ -337,7 +339,7 @@ li {
     flex-wrap: wrap;
     position: relative;
     
-   box-sizing: content-box;
+   box-sizing: border-box;
   }
   
 }
