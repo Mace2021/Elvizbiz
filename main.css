@@ -327,7 +327,7 @@ body{
     
   }
   .service-card{
-    width: 60%;
+    width: 70%;
     
   }
  
@@ -355,7 +355,11 @@ body{
     width: auto;
     
   }
+  ##contact{
+    width: auto;
+  }
   .form-group{
     width: auto;
+    box-sizing: border-box;
   }
 }
