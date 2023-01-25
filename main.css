@@ -320,6 +320,7 @@ body{
   .services-container {
     display: block;
     flex-wrap: wrap;
+    justify-items: center;
     width: auto;
     margin-left: 20%;
     box-sizing: border-box;
@@ -338,6 +339,7 @@ body{
     border: solid rgb(242, 18, 77);
     box-sizing: border-box;
     width: auto;
+    justify-items: center;
   }
   footer {
     display: flex;
