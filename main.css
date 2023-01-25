@@ -220,7 +220,7 @@ nav ul li ul li a {
   margin-bottom: 40px;
   text-align: center;
   box-shadow: 0px 5px 25px;
-  border-radius: 5px;
+  border-radius: 25px;
   
 }
 
@@ -330,6 +330,7 @@ li {
     margin-bottom: 40px;
     text-align: center;
     box-shadow: 0px 5px 25px;
+    padding: 0, 50%, 0, 50%;
   }
 
   .forms {
@@ -338,7 +339,7 @@ li {
 
   }
   footer {
-    display: flex;
+    display: inline-block;
     flex-wrap: wrap;
     position: relative;
     
@@ -347,5 +348,6 @@ li {
   #home{
     justify-content: center;
     padding: auto;
+    padding: 0, 50%, 0, 50%;
   }
 }
