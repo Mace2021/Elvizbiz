@@ -317,8 +317,9 @@ li {
   .services-container {
     display: block;
     flex-wrap: wrap;
-    width: 100%;
+    width: 70%;
     margin-left: 20%;
+    box-sizing: content-box;
   }
   .service-card{
     width: 50%;
