@@ -346,6 +346,7 @@ body{
     flex-wrap: wrap;
     position: relative;
     width: auto;
+    height: auto;
    box-sizing: border-box;
    width: auto;
    border: solid rgb(241, 186, 7);
