@@ -317,7 +317,7 @@ li {
  }
 .card{
   justify-content: center;
-  margin: 0, 50%, 0, 50%;
+ 
   justify-content: space-evenly;
     justify-content: center;
 }
@@ -353,7 +353,7 @@ li {
   #home{
     justify-content: center;
     padding: auto;
-    padding: 0, 50%, 0, 50%;
+    
     margin-left: 20%;
   }
 }
