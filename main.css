@@ -326,7 +326,11 @@ body{
     box-sizing: border-box;
     
   }
-  .service-card,form-2{
+  .service-card{
+    width: 70%;
+    
+  }
+  form-2{
     width: 70%;
     
   }
