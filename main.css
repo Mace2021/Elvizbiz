@@ -314,6 +314,7 @@ li {
 @media screen and (max-width: 750px) {
 body{
   box-sizing: border-box;
+  padding-left: 20%;
 }
 
   .services-container {
@@ -335,7 +336,7 @@ body{
     margin-left: 20%;
   }
   footer {
-    display: block;
+    display: flex;
     flex-wrap: wrap;
     position: relative;
     
