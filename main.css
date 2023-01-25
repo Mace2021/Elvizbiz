@@ -317,7 +317,7 @@ li {
   .services-container {
     display: block;
     flex-wrap: wrap;
-    width: 70%;
+    width: 80%;
     margin-left: 20%;
     box-sizing: content-box;
   }
@@ -330,10 +330,10 @@ li {
   .forms {
     position: relative;
     display: block;
-    margin-left: 15%;
+    margin-left: 20%;
   }
   footer {
-    display: inline-block;
+    display: block;
     flex-wrap: wrap;
     position: relative;
     
