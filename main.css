@@ -1,4 +1,9 @@
 @charset "UTF-8";
+*{
+  box-sizing: content-box;
+  padding: 0;
+  margin: 0;
+}
 body {
   background-image: url("Backgroundpatten1.jpg");
   font: 1em sans-serif;
@@ -343,7 +348,7 @@ li {
     justify-content: center;
     justify-content: space-between;
     height: auto;
-    width: 100%;
+    width: auto;
     border: solid blueviolet;
    box-sizing: content-box;
   }
