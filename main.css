@@ -315,14 +315,14 @@ li {
 
 .card{
   justify-content: center;
- width: 50%;
+
   justify-content: space-evenly;
     justify-content: center;
 }
   .services-container {
     display: block;
     flex-wrap: wrap;
-   
+    width: 50%;
     margin-left: 20%;
   }
   
