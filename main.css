@@ -355,7 +355,7 @@ body{
     width: auto;
     
   }
-  input{
+  .form-group{
     width: auto;
   }
 }
