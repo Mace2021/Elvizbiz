@@ -29,19 +29,20 @@ const scriptURL =
   "https://script.google.com/macros/s/AKfycbwRsVIqpfHc-xPT_rwdzyAgDGJfzt2cd1izsa4U_BwUey0-P3T8X3ZHYVkAGzZkIWBv/exec";
 
 form.addEventListener("submit", (e) => {
-  submitButton.disabled = true;
   e.preventDefault();
-  let requestBody = new FormData(form);
-  fetch(scriptURL, { method: "POST", body: requestBody })
+  btn.disabled = true;
+  btn.innerHTML = "Loading...";
+
+  console.log(form);
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      alert("Success!");
-      submitButton.disabled = false;
+      btn.disabled = false;
+      btn.innerHTML = "Submit";
+      alert("Success!", response);
     })
     .catch((error) => {
-      alert(`Error: ${error.message}`);
-      submitButton.disabled = false;
+      btn.disabled = false;
+      btn.innerHTML = "Submit";
+      alert("Error!", error.message);
     });
 });
