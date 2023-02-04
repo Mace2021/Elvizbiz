@@ -27,13 +27,13 @@ window.onload = Screen;
 
 document.getElementById("submit").addEventListener("click", myFunction);
 function myFunction() {
-  window.location.replace("./thanks.html");
+  window.location.replace("thanks.html");
 }
 
 const form = document.querySelector("#contact");
 const submitButton = document.querySelector("#submit");
 const scriptURL =
-  "https://script.google.com/macros/s/AKfycbwrD4Sabg-Uf7PQWpLPmSEabqSgQg3IkcCS6VXodZ4/dev";
+  "https://script.google.com/macros/s/AKfycbyatks-n-sBJmpkFFKfqjXhFDOba0qTsuFXNsB5wRSRdeEes5zGdGCw7OypNHbGwPW-/exec";
 
 form.addEventListener("submit", (e) => {
   submitButton.disabled = true;
