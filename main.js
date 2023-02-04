@@ -25,15 +25,12 @@ window.onload = Screen;
   }); // end DOM ready
 })(jQuery); // end jQuery
 
-document.getElementById("submit").addEventListener("click", myFunction);
-function myFunction() {
-  window.location.href("./thanks.html");
-}
+
 
 const form = document.querySelector("#contact");
 const submitButton = document.querySelector("#submit");
 const scriptURL =
-  "https://script.google.com/macros/s/AKfycbzwbJf3OL49qEmpPvJOvffLnBsHrPlT9fF1VyIzJl84aLu1ZKjAPphRVqVUEFwA471r/exec";
+  "https://script.google.com/macros/s/AKfycbyz8Lk6aqolmm9S6DGvDV-F_t-OM84ARBqf6PJAaOvE_6TSau52raTgO5ev86swEiRx/exec";
 
 form.addEventListener("submit", (e) => {
   submitButton.disabled = true;
