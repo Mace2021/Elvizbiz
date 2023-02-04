@@ -34,11 +34,14 @@ form.addEventListener("submit", (e) => {
   let requestBody = new FormData(form);
   fetch(scriptURL, { method: "POST", body: requestBody })
     .then((response) => {
-      alert("Success!", response);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      alert("Success!");
       submitButton.disabled = false;
     })
     .catch((error) => {
-      alert("Error!", error.message);
+      alert(`Error: ${error.message}`);
       submitButton.disabled = false;
     });
 });
