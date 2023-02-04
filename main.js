@@ -23,3 +23,27 @@
   });
 })(jQuery);
 
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbwRsVIqpfHc-xPT_rwdzyAgDGJfzt2cd1izsa4U_BwUey0-P3T8X3ZHYVkAGzZkIWBv/exec";
+
+const form = document.querySelector("#form");
+const btn = document.querySelector("#submit");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  btn.disabled = true;
+  btn.innerHTML = "Loading...";
+
+  console.log(form);
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => {
+      btn.disabled = false;
+      btn.innerHTML = "Submit";
+      alert("Success!", response);
+    })
+    .catch((error) => {
+      btn.disabled = false;
+      btn.innerHTML = "Submit";
+      alert("Error!", error.message);
+    });
+});
