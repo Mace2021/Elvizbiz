@@ -23,8 +23,8 @@
   });
 })(jQuery);
 
-const form = document.querySelector("#contact");
-const submitButton = document.querySelector("#submit");
+const form = document.querySelector("#form");
+const btn = document.querySelector("#submit");
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbwRsVIqpfHc-xPT_rwdzyAgDGJfzt2cd1izsa4U_BwUey0-P3T8X3ZHYVkAGzZkIWBv/exec";
 
