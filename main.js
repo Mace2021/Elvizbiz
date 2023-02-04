@@ -27,23 +27,18 @@ const scriptURL =
   "https://script.google.com/macros/s/AKfycbzAqgCg2i5iDa6QmG67r_uiGRxONFVU7LwqQicBKJUZujitPtBPTGF496lpG7VxUod-/exec";
 
 const form = document.querySelector("#form");
-const btn = document.querySelector("#submit");
-
+const submitButton = document.querySelector("#submit");
 form.addEventListener("submit", (e) => {
+  submitButton.disabled = true;
   e.preventDefault();
-  btn.disabled = true;
-  btn.innerHTML = "Loading...";
-
-  console.log(form);
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+  let requestBody = new FormData(form);
+  fetch(scriptURL, { method: "POST", body: requestBody })
     .then((response) => {
-      btn.disabled = false;
-      btn.innerHTML = "Submit";
       alert("Success!", response);
+      submitButton.disabled = false;
     })
     .catch((error) => {
-      btn.disabled = false;
-      btn.innerHTML = "Submit";
       alert("Error!", error.message);
+      submitButton.disabled = false;
     });
 });
