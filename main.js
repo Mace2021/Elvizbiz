@@ -1,8 +1,6 @@
-window.onload = Screen;
 (function ($) {
-  // Begin jQuery
+  // DOM ready
   $(function () {
-    // DOM ready
     // If a link has a dropdown, add sub menu toggle.
     $("nav ul li a:not(:only-child)").click(function (e) {
       $(this).siblings(".nav-dropdown").toggle();
@@ -19,13 +17,11 @@ window.onload = Screen;
       $("nav ul").slideToggle();
     });
     // Hamburger to X toggle
-    $("#nav-toggle").on("click", function () {
+    $("#nav-toggle").click(function () {
       this.classList.toggle("active");
     });
-  }); // end DOM ready
-})(jQuery); // end jQuery
-
-
+  });
+})(jQuery);
 
 const form = document.querySelector("#contact");
 const submitButton = document.querySelector("#submit");
