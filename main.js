@@ -24,7 +24,7 @@
 })(jQuery);
 
 const scriptURL =
-  "https://script.google.com/macros/s/AKfycbwRsVIqpfHc-xPT_rwdzyAgDGJfzt2cd1izsa4U_BwUey0-P3T8X3ZHYVkAGzZkIWBv/exec";
+  "https://script.google.com/macros/s/AKfycbzAqgCg2i5iDa6QmG67r_uiGRxONFVU7LwqQicBKJUZujitPtBPTGF496lpG7VxUod-/exec";
 
 const form = document.querySelector("#form");
 const btn = document.querySelector("#submit");
