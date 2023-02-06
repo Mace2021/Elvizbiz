@@ -24,7 +24,7 @@
 })(jQuery);
 
 const scriptURL =
-  "https://script.google.com/macros/s/AKfycbzAqgCg2i5iDa6QmG67r_uiGRxONFVU7LwqQicBKJUZujitPtBPTGF496lpG7VxUod-/exec";
+  "https://script.google.com/macros/s/AKfycbwBMHFvG6pfZliVQrajBR-72NCv_0tTeXB1wpc-QAX3gd8KdTZnlAyHEp-rfjf7-4yt/exec";
 
 const form = document.querySelector("#form");
 const submitButton = document.querySelector("#submit");
@@ -33,22 +33,21 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   let requestBody = new FormData(form);
   fetch(scriptURL, { method: "POST", body: requestBody })
-  .then((response) => {
-    if (response.status === 200) {
-      return response.json();
-    } else {
-      throw new Error("Something went wrong");
-    }
-  })
-  .then((data) => {
-    console.log(data);
-    alert("Success!");
-    submitButton.disabled = false;
-  })
-  .catch((error) => {
-    console.error(error);
-    alert("Error! " + error.message);
-    submitButton.disabled = false;
-  });
-
+    .then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong");
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      alert("Success!");
+      submitButton.disabled = false;
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Error! " + error.message);
+      submitButton.disabled = false;
+    });
 });
