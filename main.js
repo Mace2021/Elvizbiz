@@ -23,6 +23,7 @@
   });
 })(jQuery);
 var PropertiesService = GoogleAppsScript.Properties.PropertiesService;
+
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbwBMHFvG6pfZliVQrajBR-72NCv_0tTeXB1wpc-QAX3gd8KdTZnlAyHEp-rfjf7-4yt/exec";
 
